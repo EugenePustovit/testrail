@@ -56,7 +56,7 @@ type SendableResult struct {
 	Defects      string   `json:"defects,omitempty"`
 	AssignedToID int      `json:"assignedto_id,omitempty"`
 
-	customResult
+	//customResult
 }
 
 // SendableResults represents a list of run results
@@ -68,15 +68,25 @@ type SendableResults struct {
 // Results represents a run result
 // that can be created or updated via the api
 type Results struct {
-	TestID int `json:"test_id"`
-	SendableResult
+	TestID       int      `json:"test_id"`
+	StatusID     int      `json:"status_id,omitempty"`
+	Comment      string   `json:"comment,omitempty"`
+	Version      string   `json:"version,omitempty"`
+	Elapsed      timespan `json:"elapsed,omitempty"`
+	Defects      string   `json:"defects,omitempty"`
+	AssignedToID int      `json:"assignedto_id,omitempty"`
 }
 
 // Results represents a run result
 // that can be created or updated via the api
 type ResultsForCase struct {
-	CaseID int `json:"case_id"`
-	SendableResult
+	CaseID       int      `json:"case_id"`
+	StatusID     int      `json:"status_id,omitempty"`
+	Comment      string   `json:"comment,omitempty"`
+	Version      string   `json:"version,omitempty"`
+	Elapsed      timespan `json:"elapsed,omitempty"`
+	Defects      string   `json:"defects,omitempty"`
+	AssignedToID int      `json:"assignedto_id,omitempty"`
 }
 
 // SendableResultsForCase represents a Test Case result
